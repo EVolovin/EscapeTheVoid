@@ -15,3 +15,8 @@ Escape it or be consumed by it.
 Bevare of the meteors over your head.
 
 And you might as well want to watch your step.
+
+  
+
+> [!NOTE]
+> For the best playing experience, build the project with Ctrl+B in the Unity Editor
