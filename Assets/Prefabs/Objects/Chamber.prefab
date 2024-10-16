@@ -509,7 +509,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.04, y: 0.05, z: 0.0015019788}
+  m_Size: {x: 0.035, y: 0.05, z: 0.0015019788}
   m_Center: {x: 0, y: 0, z: -0.00051192055}
 --- !u!4 &4383012915380832182 stripped
 Transform:
@@ -566,7 +566,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.04, y: 0.05, z: 0.0015019788}
+  m_Size: {x: 0.035, y: 0.05, z: 0.0015019788}
   m_Center: {x: 0, y: 0, z: -0.00051192055}
 --- !u!1 &5765751058593844920 stripped
 GameObject:

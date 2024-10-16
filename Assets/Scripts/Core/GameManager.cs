@@ -32,6 +32,7 @@ namespace EscapeTheVoid.Core
         int _collectedKeys;
         
         bool _isPaused;
+        bool _cutsceneShown;
         
         
         void Start()
@@ -153,19 +154,27 @@ namespace EscapeTheVoid.Core
         
         IEnumerator PlayOnPlayerLeftStartingChamber()
         {
-            _playerController.SetControlsLocked(true);
-            
-            // Look around
-            const float duration = 0.5f;
-            _playerController.SetViewDirection(0f, 0f, duration);
-            yield return new WaitForSeconds(duration);
+            if (!_cutsceneShown)
+            {
+                _playerController.SetControlsLocked(true);
+                
+                // Look around
+                const float duration = 0.5f;
+                _playerController.SetViewDirection(0f, 0f, duration);
+                yield return new WaitForSeconds(duration);
+            }
             
             // Chamber door closing and disappearing
             _startingChamber.CloseDoor();
             _startingChamber.Shrink(1f);
             
-            yield return new WaitForSeconds(2f);
-            _playerController.SetControlsLocked(false);
+            if (!_cutsceneShown)
+            {
+                yield return new WaitForSeconds(2f);
+                _playerController.SetControlsLocked(false);
+                
+                _cutsceneShown = true;
+            }
             
             _threatManager.Enabled = true;
         }

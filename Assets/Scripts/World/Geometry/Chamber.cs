@@ -89,7 +89,10 @@ namespace EscapeTheVoid.World.Geometry
             if (delay != 0f)
                 yield return new WaitForSeconds(delay);
             
-            transform.DOScale(Vector3.zero, duration);
+            if (duration == 0f)
+                transform.localScale = Vector3.zero;
+            else
+                transform.DOScale(Vector3.zero, duration);
             
             yield return new WaitForSeconds(duration);
             gameObject.SetActive(false);
@@ -100,7 +103,10 @@ namespace EscapeTheVoid.World.Geometry
             if (delay != 0f)
                 yield return new WaitForSeconds(delay);
             
-            transform.DOScale(Vector3.one, duration);
+            if (duration == 0f)
+                transform.localScale = Vector3.one;
+            else
+                transform.DOScale(Vector3.one, duration);
         }
     }
 }
